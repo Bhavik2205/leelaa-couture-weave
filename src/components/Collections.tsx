@@ -47,9 +47,10 @@ const Collections = () => {
         {/* Collections Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {collections.map((collection, index) => (
-            <div 
+            <Link
               key={collection.name}
-              className={`group relative overflow-hidden rounded-lg bg-gradient-to-br ${collection.color} p-8 h-96 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl`}
+              to={collection.route}
+              className={`group relative overflow-hidden rounded-lg bg-gradient-to-br ${collection.color} p-8 h-96 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl block`}
             >
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10">
@@ -72,21 +73,18 @@ const Collections = () => {
                 </div>
 
                 <div className="pt-6">
-                  <Link 
-                    to={collection.route}
-                    className="group/btn relative inline-flex items-center text-maroon font-montserrat font-medium tracking-wide hover:text-gold transition-colors duration-300"
-                  >
+                  <span className="group/btn relative inline-flex items-center text-maroon font-montserrat font-medium tracking-wide hover:text-gold transition-colors duration-300">
                     <span className="relative">View Collection</span>
                     <svg className="ml-2 w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </Link>
+                  </span>
                 </div>
               </div>
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-maroon/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

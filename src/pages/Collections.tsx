@@ -12,7 +12,8 @@ const Collections = () => {
       fullDescription: "The Virasat collection embodies the opulence of Indian royalty. Each piece is meticulously crafted with rich fabrics like velvet and silk, adorned with traditional zardozi embroidery using gold and silver threads. This collection features deep maroons, royal blues, and emerald greens that speak to the grandeur of palace halls and royal courts.",
       color: "from-indigo/20 to-maroon/20",
       accent: "text-indigo",
-      pieces: ["Royal Lehenga Set", "Palace Anarkali", "Maharani Sharara", "Heritage Saree"]
+      pieces: ["Royal Lehenga Set", "Palace Anarkali", "Maharani Sharara", "Heritage Saree"],
+      route: "/virasat"
     },
     {
       name: "Neyaa Saawan",
@@ -21,7 +22,8 @@ const Collections = () => {
       fullDescription: "Neyaa Saawan captures the essence of monsoon romance through flowing silhouettes and delicate craftsmanship. Inspired by rain-washed gardens and cloudy skies, this collection features soft chiffons, georgettes, and crepes in subtle blues, greys, and pearl whites, adorned with French knots and delicate threadwork.",
       color: "from-blush/30 to-gold/20",
       accent: "text-gold",
-      pieces: ["Monsoon Lehenga", "Cloud Palazzo Set", "Rain Drop Saree", "Breeze Kurti"]
+      pieces: ["Monsoon Lehenga", "Cloud Palazzo Set", "Rain Drop Saree", "Breeze Kurti"],
+      route: "/neyaa-saawan"
     },
     {
       name: "Madhurya",
@@ -30,7 +32,8 @@ const Collections = () => {
       fullDescription: "Madhurya celebrates feminine grace through soft pastels and romantic silhouettes. This collection features blush pinks, powder blues, and cream tones, enhanced with pearl work, floral embroidery, and delicate sequin details. Perfect for the bride who dreams of fairy-tale romance.",
       color: "from-blush/40 to-ivory",
       accent: "text-maroon",
-      pieces: ["Rose Garden Lehenga", "Pearl Romance Set", "Blush Anarkali", "Sweet Dreams Saree"]
+      pieces: ["Rose Garden Lehenga", "Pearl Romance Set", "Blush Anarkali", "Sweet Dreams Saree"],
+      route: "/madhurya"
     }
   ];
 
@@ -59,7 +62,10 @@ const Collections = () => {
             {collections.map((collection, index) => (
               <div key={collection.name} className={`mb-20 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} flex flex-col lg:flex-row gap-16 items-center`}>
                 <div className="lg:w-1/2">
-                  <div className={`relative overflow-hidden rounded-lg bg-gradient-to-br ${collection.color} p-12 h-96`}>
+                  <Link 
+                    to={collection.route}
+                    className={`block relative overflow-hidden rounded-lg bg-gradient-to-br ${collection.color} p-12 h-96 hover:scale-105 transition-transform duration-300`}
+                  >
                     <div className="absolute inset-0 opacity-10">
                       <div className="h-full w-full bg-repeat-y" style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23600f2f' fill-opacity='0.2'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
@@ -75,7 +81,7 @@ const Collections = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
                 
                 <div className="lg:w-1/2 space-y-6">
@@ -100,11 +106,11 @@ const Collections = () => {
                   
                   <div className="pt-4">
                     <Link 
-                      to="/contact"
+                      to={collection.route}
                       className="group relative inline-flex items-center px-6 py-3 border-2 border-gold text-maroon font-montserrat font-medium tracking-wide hover:text-ivory transition-colors duration-300 overflow-hidden"
                     >
                       <span className="absolute inset-0 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                      <span className="relative">Enquire About Collection</span>
+                      <span className="relative">View Collection</span>
                     </Link>
                   </div>
                 </div>
