@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 const About = () => {
   return (
     <section id="about" className="py-20 bg-ivory">
@@ -37,12 +39,15 @@ const About = () => {
             </div>
 
             <div className="pt-6">
-              <button className="group relative inline-flex items-center px-6 py-3 text-maroon font-montserrat font-medium tracking-wide hover:text-gold transition-colors duration-300">
+              <Link 
+                to="/about"
+                className="group relative inline-flex items-center px-6 py-3 text-maroon font-montserrat font-medium tracking-wide hover:text-gold transition-colors duration-300"
+              >
                 <span className="relative">Discover Our Story</span>
                 <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
 

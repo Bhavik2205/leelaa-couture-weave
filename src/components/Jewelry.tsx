@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 const Jewelry = () => {
   const jewelry = [
     {
@@ -85,14 +87,14 @@ const Jewelry = () => {
                 </p>
                 
                 <div className="flex items-center justify-between">
-                  <span className="font-montserrat text-gold font-medium">
+                  <Link to="/contact" className="font-montserrat text-gold font-medium hover:text-maroon transition-colors duration-300">
                     Price Upon Request
-                  </span>
-                  <button className="text-maroon hover:text-gold transition-colors duration-300">
+                  </Link>
+                  <Link to="/jewellery" className="text-maroon hover:text-gold transition-colors duration-300">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -101,10 +103,13 @@ const Jewelry = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <button className="group relative inline-flex items-center px-8 py-4 border-2 border-gold text-maroon font-montserrat font-medium tracking-wide hover:text-ivory transition-colors duration-300 overflow-hidden">
+          <Link 
+            to="/jewellery"
+            className="group relative inline-flex items-center px-8 py-4 border-2 border-gold text-maroon font-montserrat font-medium tracking-wide hover:text-ivory transition-colors duration-300 overflow-hidden"
+          >
             <span className="absolute inset-0 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             <span className="relative">View Complete Collection</span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

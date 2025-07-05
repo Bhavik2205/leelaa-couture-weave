@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 const Collections = () => {
   const collections = [
     {
@@ -67,12 +69,15 @@ const Collections = () => {
                 </div>
 
                 <div className="pt-6">
-                  <button className="group/btn relative inline-flex items-center text-maroon font-montserrat font-medium tracking-wide hover:text-gold transition-colors duration-300">
+                  <Link 
+                    to="/collections"
+                    className="group/btn relative inline-flex items-center text-maroon font-montserrat font-medium tracking-wide hover:text-gold transition-colors duration-300"
+                  >
                     <span className="relative">View Collection</span>
                     <svg className="ml-2 w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
 

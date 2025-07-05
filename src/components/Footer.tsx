@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="bg-maroon text-ivory">
@@ -6,11 +8,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <img 
-              src="/lovable-uploads/9e5787d7-42ab-4f94-9203-459627696050.png" 
-              alt="LEELAA Logo" 
-              className="h-16 w-auto mb-6 filter brightness-0 invert"
-            />
+            <Link to="/" className="font-playfair text-4xl font-bold text-ivory hover:text-gold transition-colors duration-300 mb-6 block">
+              LEELAA
+            </Link>
             <p className="font-montserrat text-ivory/80 mb-6 leading-relaxed max-w-md">
               A luxury couture house celebrating the timeless elegance of Indian heritage 
               through contemporary design and artisan craftsmanship.
@@ -36,10 +36,10 @@ const Footer = () => {
           <div>
             <h3 className="font-playfair text-xl text-gold mb-6">Collections</h3>
             <ul className="space-y-3 font-montserrat text-ivory/80">
-              <li><a href="#virasat" className="hover:text-gold transition-colors duration-300">Virasat</a></li>
-              <li><a href="#neyaa-saawan" className="hover:text-gold transition-colors duration-300">Neyaa Saawan</a></li>
-              <li><a href="#madhurya" className="hover:text-gold transition-colors duration-300">Madhurya</a></li>
-              <li><a href="#jewellery" className="hover:text-gold transition-colors duration-300">Jewellery</a></li>
+              <li><Link to="/collections" className="hover:text-gold transition-colors duration-300">Virasat</Link></li>
+              <li><Link to="/collections" className="hover:text-gold transition-colors duration-300">Neyaa Saawan</Link></li>
+              <li><Link to="/collections" className="hover:text-gold transition-colors duration-300">Madhurya</Link></li>
+              <li><Link to="/jewellery" className="hover:text-gold transition-colors duration-300">Jewellery</Link></li>
             </ul>
           </div>
 
@@ -47,11 +47,11 @@ const Footer = () => {
           <div>
             <h3 className="font-playfair text-xl text-gold mb-6">Support</h3>
             <ul className="space-y-3 font-montserrat text-ivory/80">
-              <li><a href="#sizing" className="hover:text-gold transition-colors duration-300">Sizing Guide</a></li>
-              <li><a href="#shipping" className="hover:text-gold transition-colors duration-300">Shipping Policy</a></li>
-              <li><a href="#returns" className="hover:text-gold transition-colors duration-300">Return Policy</a></li>
-              <li><a href="#care" className="hover:text-gold transition-colors duration-300">Care Instructions</a></li>
-              <li><a href="#privacy" className="hover:text-gold transition-colors duration-300">Privacy Policy</a></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors duration-300">Sizing Guide</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors duration-300">Shipping Policy</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors duration-300">Return Policy</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors duration-300">Care Instructions</Link></li>
+              <li><Link to="/contact" className="hover:text-gold transition-colors duration-300">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>

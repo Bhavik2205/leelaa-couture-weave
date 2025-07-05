@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,12 +15,13 @@ const Navigation = () => {
   }, []);
 
   const menuItems = [
-    { name: 'Collections', href: '#collections' },
-    { name: 'Jewellery', href: '#jewellery' },
-    { name: 'Weddings', href: '#weddings' },
-    { name: 'Press', href: '#press' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'Collections', href: '/collections' },
+    { name: 'Jewellery', href: '/jewellery' },
+    { name: 'Weddings', href: '/weddings' },
+    { name: 'Press', href: '/press' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -30,25 +32,23 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/9e5787d7-42ab-4f94-9203-459627696050.png" 
-              alt="LEELAA Logo" 
-              className="h-12 w-auto transition-transform duration-300 hover:scale-105"
-            />
+            <Link to="/" className="font-playfair text-3xl font-bold text-maroon hover:text-gold transition-colors duration-300">
+              LEELAA
+            </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="font-montserrat text-maroon hover:text-gold transition-colors duration-300 relative group"
                 >
                   {item.name}
                   <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -76,14 +76,14 @@ const Navigation = () => {
           <div className="md:hidden bg-ivory/95 backdrop-blur-sm">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="font-montserrat text-maroon hover:text-gold block px-3 py-2 transition-colors duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
