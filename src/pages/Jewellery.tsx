@@ -2,8 +2,16 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Jewellery = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const jewelry = [
     {
       name: "Kundan Chandelier Earrings",
@@ -63,6 +71,10 @@ const Jewellery = () => {
 
   const categories = ["All", "Earrings", "Necklaces", "Sets", "Chokers", "Maang Tikka", "Bangles", "Pendants"];
 
+  const filteredJewelry = selectedCategory === "All" 
+    ? jewelry 
+    : jewelry.filter(item => item.category === selectedCategory);
+
   return (
     <div className="min-h-screen bg-ivory font-montserrat">
       <Navigation />
@@ -89,7 +101,12 @@ const Jewellery = () => {
               {categories.map((category) => (
                 <button
                   key={category}
-                  className="px-4 py-2 font-montserrat text-maroon border border-maroon/20 rounded-full hover:bg-maroon hover:text-ivory transition-colors duration-300"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 font-montserrat border rounded-full transition-colors duration-300 ${
+                    selectedCategory === category
+                      ? 'bg-maroon text-ivory border-maroon'
+                      : 'text-maroon border-maroon/20 hover:bg-maroon hover:text-ivory'
+                  }`}
                 >
                   {category}
                 </button>
@@ -102,7 +119,7 @@ const Jewellery = () => {
         <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {jewelry.map((item, index) => (
+              {filteredJewelry.map((item, index) => (
                 <div 
                   key={item.name}
                   className="group bg-ivory rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
@@ -142,10 +159,10 @@ const Jewellery = () => {
                     </p>
                     
                     <div className="flex items-center justify-between">
-                      <Link to="/contact" className="font-montserrat text-gold font-medium hover:text-maroon transition-colors duration-300">
+                      <Link to="/contact?inquiry=jewelry" className="font-montserrat text-gold font-medium hover:text-maroon transition-colors duration-300">
                         Price Upon Request
                       </Link>
-                      <Link to="/contact" className="text-maroon hover:text-gold transition-colors duration-300">
+                      <Link to="/contact?inquiry=jewelry" className="text-maroon hover:text-gold transition-colors duration-300">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -169,7 +186,7 @@ const Jewellery = () => {
               dreams to life with bespoke jewelry designed exclusively for you.
             </p>
             <Link 
-              to="/contact"
+              to="/contact?inquiry=custom-jewelry"
               className="group relative inline-flex items-center px-8 py-4 border-2 border-gold text-maroon font-montserrat font-medium tracking-wide hover:text-ivory transition-colors duration-300 overflow-hidden"
             >
               <span className="absolute inset-0 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>

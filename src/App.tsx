@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,6 +16,10 @@ import NeyaaSaawan from "./pages/NeyaaSaawan";
 import Madhurya from "./pages/Madhurya";
 import SizingGuide from "./pages/SizingGuide";
 import NotFound from "./pages/NotFound";
+import ShippingPolicy from "./pages/ShippingPolicy";
+import ReturnPolicy from "./pages/ReturnPolicy";
+import CareInstructions from "./pages/CareInstructions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -39,10 +42,10 @@ const App = () => (
           <Route path="/neyaa-saawan" element={<NeyaaSaawan />} />
           <Route path="/madhurya" element={<Madhurya />} />
           <Route path="/sizing-guide" element={<SizingGuide />} />
-          <Route path="/shipping-policy" element={<Contact />} />
-          <Route path="/return-policy" element={<Contact />} />
-          <Route path="/care-instructions" element={<Contact />} />
-          <Route path="/privacy-policy" element={<Contact />} />
+          <Route path="/shipping-policy" element={<ShippingPolicy />} />
+          <Route path="/return-policy" element={<ReturnPolicy />} />
+          <Route path="/care-instructions" element={<CareInstructions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
