@@ -9,6 +9,10 @@ const Hero = () => {
     setIsVisible(true);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-ivory via-blush/20 to-ivory">
       {/* Background Pattern */}
@@ -63,11 +67,14 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <button 
+        onClick={scrollToTop}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hover:text-gold transition-colors duration-300"
+      >
         <div className="w-6 h-10 border-2 border-maroon/30 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-maroon/50 rounded-full mt-2"></div>
         </div>
-      </div>
+      </button>
     </section>
   );
 };

@@ -12,6 +12,10 @@ import Jewellery from "./pages/Jewellery";
 import Weddings from "./pages/Weddings";
 import Press from "./pages/Press";
 import Contact from "./pages/Contact";
+import Virasat from "./pages/Virasat";
+import NeyaaSaawan from "./pages/NeyaaSaawan";
+import Madhurya from "./pages/Madhurya";
+import SizingGuide from "./pages/SizingGuide";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +35,14 @@ const App = () => (
           <Route path="/weddings" element={<Weddings />} />
           <Route path="/press" element={<Press />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/virasat" element={<Virasat />} />
+          <Route path="/neyaa-saawan" element={<NeyaaSaawan />} />
+          <Route path="/madhurya" element={<Madhurya />} />
+          <Route path="/sizing-guide" element={<SizingGuide />} />
+          <Route path="/shipping-policy" element={<Contact />} />
+          <Route path="/return-policy" element={<Contact />} />
+          <Route path="/care-instructions" element={<Contact />} />
+          <Route path="/privacy-policy" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

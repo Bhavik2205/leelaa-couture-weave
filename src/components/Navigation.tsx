@@ -1,10 +1,11 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,8 +15,14 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLogoClick = () => {
+    if (location.pathname === '/home' || location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const menuItems = [
-    { name: 'Home', href: '/' },
+    { name: 'Home', href: '/home' },
     { name: 'Collections', href: '/collections' },
     { name: 'Jewellery', href: '/jewellery' },
     { name: 'Weddings', href: '/weddings' },
@@ -32,7 +39,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="font-playfair text-3xl font-bold text-maroon hover:text-gold transition-colors duration-300">
+            <Link 
+              to="/home" 
+              onClick={handleLogoClick}
+              className="font-playfair text-3xl font-bold text-maroon hover:text-gold transition-colors duration-300"
+            >
               LEELAA
             </Link>
           </div>

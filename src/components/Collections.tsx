@@ -8,21 +8,24 @@ const Collections = () => {
       subtitle: "Royal Heritage",
       description: "Deep jewel tones and regal silhouettes inspired by the grandeur of Indian palaces. Rich velvets, intricate zardozi, and timeless elegance for the modern maharani.",
       color: "from-indigo/20 to-maroon/20",
-      accent: "text-indigo"
+      accent: "text-indigo",
+      route: "/virasat"
     },
     {
       name: "Neyaa Saawan",
       subtitle: "Monsoon Poetry",
       description: "Flowing fabrics in monsoon hues that dance with every step. Delicate embroidery celebrating the romance of rain-kissed gardens and gentle breezes.",
       color: "from-blush/30 to-gold/20",
-      accent: "text-gold"
+      accent: "text-gold",
+      route: "/neyaa-saawan"
     },
     {
       name: "Madhurya",
       subtitle: "Sweet Romance",
       description: "Soft blushes and gentle roses for the romantic soul. Dreamy pastels with intricate pearl work and delicate florals that whisper tales of love.",
       color: "from-blush/40 to-ivory",
-      accent: "text-maroon"
+      accent: "text-maroon",
+      route: "/madhurya"
     }
   ];
 
@@ -70,7 +73,7 @@ const Collections = () => {
 
                 <div className="pt-6">
                   <Link 
-                    to="/collections"
+                    to={collection.route}
                     className="group/btn relative inline-flex items-center text-maroon font-montserrat font-medium tracking-wide hover:text-gold transition-colors duration-300"
                   >
                     <span className="relative">View Collection</span>
