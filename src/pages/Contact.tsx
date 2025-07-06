@@ -171,7 +171,7 @@ const Contact = () => {
                   <div className="space-y-4">
                     <p className="font-montserrat text-maroon/80">
                       <strong>Coming Soon</strong><br />
-                      Our flagship studio will be opening in 2025.<br />
+                      Our flagship studio will be opening in 2026.<br />
                       Currently accepting appointments for virtual consultations.
                     </p>
                   </div>
